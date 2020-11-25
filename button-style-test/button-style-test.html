@@ -13,7 +13,26 @@
                 const button = document.createElement("button");
                 button.className = "style-1"
                 button.innerHTML = `Test Button ${i}`;
+                button.isActive = false;
+                button.addEventListener("click", () => style1ButtonOnClick(button));
                 buttonContainer.append(button);
+            }
+
+            const preservedStyle1ButtonBoxShadowBehavior = document.querySelector("button.style-1").style.boxShadow;
+
+            const style1ButtonOnClick = button => {
+                button.isActive = !button.isActive;
+                if (button.isActive) {
+                    button.style.color = "#f00";
+                    button.style.border = "1px solid #f00";
+                    button.style.boxShadow = "0 0 10px #f00";
+                }
+                else
+                {
+                    button.style.color = "#fff";
+                    button.style.border = "1px solid #9bcd9b";
+                    button.style.boxShadow = preservedStyle1ButtonBoxShadowBehavior;
+                }
             }
         </script>
     </body>
