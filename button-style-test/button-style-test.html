@@ -9,10 +9,12 @@
         <script>
             const buttonContainer = document.querySelector("div.button-container");
 
+            // Begin: Style 1
             for (let i = 0; i < 10; i++) {
                 const button = document.createElement("button");
-                button.className = "style-1"
-                button.innerHTML = `Test Button ${i}`;
+                button.className = "style-1";
+                button.number = i;
+                button.innerHTML = `Test Button ${button.number}`;
                 button.isActive = false;
                 button.addEventListener("click", () => style1ButtonOnClick(button));
                 buttonContainer.append(button);
@@ -26,14 +28,32 @@
                     button.style.color = "#f00";
                     button.style.border = "1px solid #f00";
                     button.style.boxShadow = "0 0 10px #f00";
+                    console.log(`Test Button ${button.number} activated`);
                 }
                 else
                 {
                     button.style.color = "#fff";
                     button.style.border = "1px solid #9bcd9b";
                     button.style.boxShadow = preservedStyle1ButtonBoxShadowBehavior;
+                    console.log(`Test Button ${button.number} deactivated`);
                 }
             }
+            // End: Style 1
+
+            // Begin: Style 2
+            for (let i = 0; i < 10; i++) {
+                const button = document.createElement("button")
+                button.className = "style-2";
+                button.number = i + 10;
+                button.innerHTML = `Test Button ${button.number}`;
+                button.addEventListener("click", () => style2ButtonOnClick(button));
+                buttonContainer.append(button);
+            }
+
+            const style2ButtonOnClick = button => {
+                console.log(`Test Button ${button.number} pressed`);
+            }
+            // End: Style 2
         </script>
     </body>
 </html>

@@ -32,3 +32,29 @@ button.style-1:hover {
     color: #cdffcd;
     box-shadow: 0 0 10px #cdffcd;
 }
+
+button.style-2 {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    width: calc(10% - 10px);
+    font-family: monospace;
+    font-size: 30px;
+    word-wrap: break-word;
+    color: #fff;
+    background-color: #0000;
+    border: 1px solid #9b9bcd;
+    outline: none;
+    box-shadow: 5px 5px 5px #9b9bcd;
+    transition: all 0.25s;
+}
+
+button.style-2:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+    box-shadow: 5px 5px 5px #fff;
+}
+
+button.style-2:active {
+    border: 1px solid #00f;
+    box-shadow: 5px 5px 5px #00f;
+}
