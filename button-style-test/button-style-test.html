@@ -2,8 +2,19 @@
 <html>
     <head>
         <title>button-style-test</title>
+        <link rel="stylesheet" href="button-style-test.css" />
     </head>
     <body>
-        
+        <div class="button-container"></div>
+        <script>
+            const buttonContainer = document.querySelector("div.button-container");
+
+            for (let i = 0; i < 10; i++) {
+                const button = document.createElement("button");
+                button.className = "style-1"
+                button.innerHTML = `Test Button ${i}`;
+                buttonContainer.append(button);
+            }
+        </script>
     </body>
 </html>
