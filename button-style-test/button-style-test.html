@@ -21,6 +21,7 @@
             }
 
             const preservedStyle1ButtonBoxShadowBehavior = document.querySelector("button.style-1").style.boxShadow;
+            const preservedStyle1ButtonColorBehavior = document.querySelector("button.style-1").style.color;
 
             const style1ButtonOnClick = button => {
                 button.isActive = !button.isActive;
@@ -32,7 +33,7 @@
                 }
                 else
                 {
-                    button.style.color = "#fff";
+                    button.style.color = preservedStyle1ButtonColorBehavior;
                     button.style.border = "1px solid #9bcd9b";
                     button.style.boxShadow = preservedStyle1ButtonBoxShadowBehavior;
                     console.log(`Test Button ${button.number} deactivated`);
