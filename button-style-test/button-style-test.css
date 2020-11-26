@@ -58,3 +58,29 @@ button.style-2:active {
     border: 1px solid #00f;
     box-shadow: 5px 5px 5px #00f;
 }
+
+button.style-3 {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: calc(10% - 20px);
+    font-family: monospace;
+    font-size: 30px;
+    word-wrap: break-word;
+    color: #696969;
+    text-shadow: 1px 1px #373737;
+    background-color: #696969;
+    border: none;
+    outline: none;
+    box-shadow: 10px 10px #050505;
+    transition: margin 0.25s, box-shadow 0.25s;
+}
+
+button.style-3:hover {
+    cursor: pointer;
+}
+
+button.style-3:active {
+    margin: 20px 0 -20px 20px;
+    box-shadow: none;
+}

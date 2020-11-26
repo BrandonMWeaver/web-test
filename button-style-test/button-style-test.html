@@ -54,6 +54,16 @@
                 console.log(`Test Button ${button.number} pressed`);
             }
             // End: Style 2
+
+            // Begin: Style 3
+            for (let i = 0; i < 10; i++) {
+                const button = document.createElement("button");
+                button.className = "style-3";
+                button.number = i + 20;
+                button.innerHTML = `Test Button ${button.number}`;
+                buttonContainer.append(button);
+            }
+            // End: Style 3
         </script>
     </body>
 </html>
