@@ -56,12 +56,24 @@
             // End: Style 2
 
             // Begin: Style 3
+            let isBackgroundColorWhite = false;
+
             for (let i = 0; i < 10; i++) {
                 const button = document.createElement("button");
                 button.className = "style-3";
                 button.number = i + 20;
                 button.innerHTML = `Test Button ${button.number}`;
+                button.addEventListener("click", () => style3ButtonOnClick());
                 buttonContainer.append(button);
+            }
+
+            const style3ButtonOnClick = () => {
+                document.body.style.backgroundColor = isBackgroundColorWhite ? "#373737" : "#cdcdcd";
+                for (const button of document.querySelectorAll("button.style-3")) {
+                    button.className = isBackgroundColorWhite ? "style-3" : "style-3 active";
+                }
+                isBackgroundColorWhite = !isBackgroundColorWhite;
+                console.log(isBackgroundColorWhite ? "Background color is white" : "Background color is not white");
             }
             // End: Style 3
         </script>

@@ -7,9 +7,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #373737;
+    transition: all 0.5s;
 }
 
 .button-container {
+    overflow: hidden;
     margin: 0 10px 10px 0;
     padding: 0;
 }
@@ -67,20 +69,35 @@ button.style-3 {
     font-family: monospace;
     font-size: 30px;
     word-wrap: break-word;
-    color: #696969;
-    text-shadow: 1px 1px #373737;
-    background-color: #696969;
-    border: none;
+    color: #00f;
+    background-color: #050505;
+    border: 1px solid #00f;
     outline: none;
-    box-shadow: 10px 10px #050505;
+    box-shadow: 10px 10px #050505, inset 9px 9px #373737;
     transition: margin 0.25s, box-shadow 0.25s;
+}
+
+button.style-3.active {
+    box-shadow: 10px 10px #050505, inset 9px 9px #cdcdcd;
 }
 
 button.style-3:hover {
     cursor: pointer;
+    animation-name: style-3-animation;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 button.style-3:active {
-    margin: 20px 0 -20px 20px;
+    margin: 20px 0 0 20px;
+    color: #cdcdff;
+    border: 1px solid #cdcdff;
     box-shadow: none;
+    animation: none;
+}
+
+@keyframes style-3-animation {
+    0% { color: #00f; border: 1px solid #00f; }
+    100% { color: #cdcdff; border: 1px solid #cdcdff; }
 }
