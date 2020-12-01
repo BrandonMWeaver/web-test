@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>header-style-test</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <header class="style-1"></header>
+        <script>
+            const links = [
+                { text: "LinkedIn", href: "https://www.linkedin.com/in/brandonmichaelweaver/" },
+                { text: "GitHub", href: "https://www.github.com/BrandonMWeaver/" },
+                { text: "DEV", href: "https://www.dev.to/brandonmweaver/" },
+                { text: "CODEPEN", href: "https://www.codepen.io/brandonmweaver/" }
+            ];
+
+            // Begin: Style 1
+            const style1Header = document.querySelector("header.style-1");
+
+            const style1HeaderTitle = document.createElement("div");
+            style1HeaderTitle.className = "style-1-header-title";
+            const style1HeaderText = "EXAMPLE";
+
+            for (const char of style1HeaderText) {
+                const charContainer = document.createElement("div");
+                charContainer.className = "char-container";
+                charContainer.style.width = `calc(${100 / style1HeaderText.length}% - 10px)`;
+
+                const pChar = document.createElement("p");
+                pChar.className = "char";
+                pChar.innerHTML = char;
+
+                charContainer.append(pChar);
+                style1HeaderTitle.append(charContainer);
+            }
+
+            style1Header.append(style1HeaderTitle);
+
+            for (const link of links) {
+                const linkContainer = document.createElement("div");
+                linkContainer.className = "link-container";
+                linkContainer.style.width = `calc(${100 / links.length}% - 10px)`;
+                
+                const a = document.createElement("a");
+                a.innerHTML = link.text;
+                a.href = link.href;
+                a.target = "_blank";
+
+                linkContainer.append(a);
+                style1Header.append(linkContainer);
+            }
+            // End: Style 1
+        </script>
+    </body>
+</html>
