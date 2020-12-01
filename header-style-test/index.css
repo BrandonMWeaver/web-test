@@ -5,10 +5,11 @@ html, body {
 
 body {
     background-color: #9bcdcd;
+    transition: all 0.5s;
 }
 
 header.style-1 {
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     padding: 0 10px 0 0;
     background: linear-gradient(#fff, #9bcdcd);
 }
@@ -61,4 +62,55 @@ header.style-1 .link-container a {
 header.style-1 .link-container a:hover {
     color: #699b9b;
     background-color: #ffffff69;
+}
+
+header.style-2 {
+    overflow: hidden;
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    background: linear-gradient(to left, #050505cd 0%, #05050500 90%);
+    border-radius: 50px;
+}
+
+header.style-2 h1 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #0505059b;
+}
+
+header.style-2 h1:hover {
+    cursor: default;
+}
+
+header.style-2 .links-container {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+}
+
+header.style-2 .links-container .link-container {
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+header.style-2 .links-container .link-container a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 15px;
+    color: #0505059b;
+    transition: all 0.5s;
+}
+
+header.style-2 .links-container .link-container a:hover {
+    color: #ff0537;
 }

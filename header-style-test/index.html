@@ -6,6 +6,7 @@
     </head>
     <body>
         <header class="style-1"></header>
+        <header class="style-2"></header>
         <script>
             const links = [
                 { text: "L i n k e d I n", href: "https://www.linkedin.com/in/brandonmichaelweaver/" },
@@ -16,6 +17,9 @@
 
             // Begin: Style 1
             const style1Header = document.querySelector("header.style-1");
+            style1Header.addEventListener("mouseenter", () => {
+                document.body.style.backgroundColor = "#9bcdcd";
+            });
 
             const style1HeaderTitle = document.createElement("div");
             style1HeaderTitle.className = "style-1-header-title";
@@ -50,6 +54,37 @@
                 style1Header.append(linkContainer);
             }
             // End: Style 1
+
+            // Begin: Style 2
+            const style2Header = document.querySelector("header.style-2");
+            style2Header.addEventListener("mouseenter", () => {
+                document.body.style.backgroundColor = "#ff0537";
+            });
+
+            const style2HeaderTitle = document.createElement("h1");
+            style2HeaderTitle.innerHTML = "E X A M P L E";
+
+            style2Header.append(style2HeaderTitle);
+
+            const linksContainer = document.createElement("div");
+            linksContainer.className = "links-container";
+
+            for (const link of links) {
+                const linkContainer = document.createElement("div");
+                linkContainer.className = "link-container";
+                linkContainer.style.width = `calc(${100 / links.length}% - 10px)`;
+                
+                const a = document.createElement("a");
+                a.innerHTML = link.text;
+                a.href = link.href;
+                a.target = "_blank";
+
+                linkContainer.append(a);
+                linksContainer.append(linkContainer)
+            }
+
+            style2Header.append(linksContainer);
+            // End: Style 2
         </script>
     </body>
 </html>
