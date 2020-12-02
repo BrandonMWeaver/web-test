@@ -97,6 +97,7 @@ header.style-2 .links-container {
 header.style-2 .links-container .link-container {
     display: inline-block;
     margin: 10px 0 0 10px;
+    transition: all 0.5s;
 }
 
 header.style-2 .links-container .link-container a {

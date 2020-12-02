@@ -72,7 +72,7 @@
             for (const link of links) {
                 const linkContainer = document.createElement("div");
                 linkContainer.className = "link-container";
-                linkContainer.style.width = `calc(${100 / links.length}% - 10px)`;
+                linkContainer.style.width = window.outerWidth > 1440 ? `calc(${100 / links.length}% - 10px)` : `calc(${200 / links.length}% - 10px)`;
                 
                 const a = document.createElement("a");
                 a.innerHTML = link.text;
@@ -80,10 +80,22 @@
                 a.target = "_blank";
 
                 linkContainer.append(a);
-                linksContainer.append(linkContainer)
+                linksContainer.append(linkContainer);
             }
 
             style2Header.append(linksContainer);
+
+            window.addEventListener("resize", () => {
+                if (window.outerWidth > 1440)
+                    setStyle2HeaderLinkContainers(1);
+                else
+                    setStyle2HeaderLinkContainers(2);
+            })
+
+            const setStyle2HeaderLinkContainers = (rows = 1) => {
+                for (const linkContainer of document.querySelectorAll("header.style-2 .links-container .link-container"))
+                    linkContainer.style.width = `calc(${rows * 100 / links.length}% - 10px)`;
+            }
             // End: Style 2
         </script>
     </body>
