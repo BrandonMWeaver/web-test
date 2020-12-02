@@ -115,3 +115,33 @@ header.style-2 .links-container .link-container a {
 header.style-2 .links-container .link-container a:hover {
     color: #ff0537;
 }
+
+header.style-3 {
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    background: linear-gradient(to left, #0f0, #00f);
+}
+
+header.style-3 .main-container {
+    margin: 0;
+    padding: 0 10px 10px 0;
+    background-color: #050505;
+}
+
+header.style-3 .main-container .char-container {
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+header.style-3 .main-container .char-container p.char {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+
+header.style-3 .main-container .char-container p.char:hover {
+    cursor: default;
+}

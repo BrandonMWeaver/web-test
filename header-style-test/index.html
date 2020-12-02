@@ -7,6 +7,7 @@
     <body>
         <header class="style-1"></header>
         <header class="style-2"></header>
+        <header class="style-3"></header>
         <script>
             const links = [
                 { text: "L i n k e d I n", href: "https://www.linkedin.com/in/brandonmichaelweaver/" },
@@ -97,6 +98,44 @@
                     linkContainer.style.width = `calc(${rows * 100 / links.length}% - 10px)`;
             }
             // End: Style 2
+
+            // Begin: Style 3
+            const style3Header = document.querySelector("header.style-3");
+            style3Header.addEventListener("mouseenter", () => {
+                document.body.style.backgroundColor = "#050505";
+            });
+
+            const mainContainer = document.createElement("div");
+            mainContainer.className = "main-container";
+
+            const style3HeaderText = "EXAMPLE";
+            let greenVal = 5;
+            let blueVal = 255;
+            for (const char of style3HeaderText) {
+                const charContainer = document.createElement("div");
+                charContainer.className = "char-container";
+                charContainer.style.width = `calc(${100 / style3HeaderText.length}% - 10px)`;
+
+                const pChar = document.createElement("p");
+                pChar.className = "char";
+                pChar.innerHTML = char;
+                pChar.defaultColor = `rgb(0, ${greenVal}, ${blueVal})`;
+                pChar.style.color = pChar.defaultColor;
+                greenVal < 255 ? greenVal += 255 / style3HeaderText.length : greenVal = 255;
+                blueVal > 5 ? blueVal -= 255 / style3HeaderText.length : blueVal = 5;
+
+                pChar.addEventListener("mouseenter", () => {
+                    pChar.style.color = "#fff";
+                });
+                pChar.addEventListener("mouseleave", () => {
+                    pChar.style.color = pChar.defaultColor;
+                });
+
+                charContainer.append(pChar);
+                mainContainer.append(charContainer);
+            }
+            style3Header.append(mainContainer);
+            // End: Style 3
         </script>
     </body>
 </html>
