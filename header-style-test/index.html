@@ -121,8 +121,8 @@
                 pChar.innerHTML = char;
                 pChar.defaultColor = `rgb(0, ${greenVal}, ${blueVal})`;
                 pChar.style.color = pChar.defaultColor;
-                greenVal < 255 ? greenVal += 255 / style3HeaderText.length : greenVal = 255;
-                blueVal > 5 ? blueVal -= 255 / style3HeaderText.length : blueVal = 5;
+                greenVal < 255 ? greenVal += Math.round(255 / style3HeaderText.length) : greenVal = 255;
+                blueVal > 5 ? blueVal -= Math.round(255 / style3HeaderText.length) : blueVal = 5;
 
                 pChar.addEventListener("mouseenter", () => {
                     pChar.style.color = "#fff";
@@ -134,6 +134,33 @@
                 charContainer.append(pChar);
                 mainContainer.append(charContainer);
             }
+            
+            for (const link of links) {
+                const linkContainer = document.createElement("div");
+                linkContainer.className = "link-container";
+                linkContainer.style.width = `${100 / links.length}%`;
+
+                const aDiv = document.createElement("div");
+                aDiv.className = "a-div";
+                const a = document.createElement("a");
+                a.innerHTML = link.text.toUpperCase();
+                a.href = link.href;
+                a.target = "_blank";
+                aDiv.append(a);
+
+                const aCopyDiv = document.createElement("div");
+                aCopyDiv.className = "a-copy-div";
+                const aCopy = document.createElement("a");
+                aCopy.innerHTML = link.text.toUpperCase();
+                aCopy.href = link.href;
+                aCopy.target = "_blank";
+                aCopyDiv.append(aCopy);
+
+                linkContainer.append(aDiv);
+                linkContainer.append(aCopyDiv);
+                mainContainer.append(linkContainer);
+            }
+
             style3Header.append(mainContainer);
             // End: Style 3
         </script>

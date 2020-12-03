@@ -145,3 +145,73 @@ header.style-3 .main-container .char-container p.char {
 header.style-3 .main-container .char-container p.char:hover {
     cursor: default;
 }
+
+header.style-3 .main-container .link-container {
+    display: inline-block;
+    position: relative;
+}
+
+header.style-3 .main-container .link-container .a-div {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0 0 10px;
+    padding: 5px;
+    background: linear-gradient(to left, #00f, #0f0);
+    border-radius: 15px;
+}
+
+header.style-3 .main-container .link-container .a-copy-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin: 10px 0 0 10px;
+    padding: 5px;
+    width: calc(100% - 20px);
+    background-color: #fff;
+    border-radius: 15px;
+    opacity: 0%;
+    transition: all 0.5s;
+}
+
+header.style-3 .main-container .link-container .a-copy-div:hover {
+    opacity: 100%;
+}
+
+header.style-3 .main-container .link-container .a-div a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 15px;
+    color: #fff;
+    background-color: #050505;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+header.style-3 .main-container .link-container .a-copy-div a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 15px;
+    color: #fff;
+    background-color: #050505;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+@media screen and (max-width: 1440px) {
+    header.style-3 .main-container .link-container .a-div a {
+        font-size: 10px;
+    }
+    header.style-3 .main-container .link-container .a-copy-div a {
+        font-size: 10px;
+    }
+}
