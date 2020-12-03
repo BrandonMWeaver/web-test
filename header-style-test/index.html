@@ -137,6 +137,11 @@
                 mainContainer.append(charContainer);
             }
             
+            const underline = document.createElement("div");
+            underline.className = "underline";
+
+            mainContainer.append(underline);
+
             for (const link of links) {
                 const linkContainer = document.createElement("div");
                 linkContainer.className = "link-container";
