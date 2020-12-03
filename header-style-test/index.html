@@ -126,9 +126,11 @@
 
                 pChar.addEventListener("mouseenter", () => {
                     pChar.style.color = "#fff";
+                    pChar.style.textShadow = `0 0 10px ${pChar.defaultColor}`;
                 });
                 pChar.addEventListener("mouseleave", () => {
                     pChar.style.color = pChar.defaultColor;
+                    pChar.style.textShadow = "none";
                 });
 
                 charContainer.append(pChar);

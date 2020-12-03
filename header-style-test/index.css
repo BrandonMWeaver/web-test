@@ -119,7 +119,7 @@ header.style-2 .links-container .link-container a:hover {
 header.style-3 {
     margin: 10px 10px 0 10px;
     padding: 10px;
-    background: linear-gradient(to left, #0f0, #00f);
+    background: linear-gradient(#05050500 0%, #050505ff 75%), linear-gradient(to left, #0f0, #00f);
 }
 
 header.style-3 .main-container {
@@ -158,7 +158,7 @@ header.style-3 .main-container .link-container .a-div {
     margin: 10px 0 0 10px;
     padding: 5px;
     background: linear-gradient(to left, #00f, #0f0);
-    border-radius: 15px;
+    border-radius: 30px;
 }
 
 header.style-3 .main-container .link-container .a-copy-div {
@@ -170,8 +170,9 @@ header.style-3 .main-container .link-container .a-copy-div {
     padding: 5px;
     width: calc(100% - 20px);
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 30px;
     opacity: 0%;
+    box-shadow: 0 0 5px #0f0;
     transition: all 0.5s;
 }
 
@@ -182,28 +183,30 @@ header.style-3 .main-container .link-container .a-copy-div:hover {
 header.style-3 .main-container .link-container .a-div a {
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     font-family: monospace;
     font-size: 15px;
     color: #fff;
     background-color: #050505;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all 0.5s;
 }
 
 header.style-3 .main-container .link-container .a-copy-div a {
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     font-family: monospace;
     font-size: 15px;
     color: #fff;
     background-color: #050505;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px #0f0;
+    text-shadow: 0 0 5px #0f0;
     transition: all 0.5s;
 }
 
