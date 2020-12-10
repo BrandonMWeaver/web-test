@@ -195,6 +195,7 @@ header.style-3 .main-container .link-container .a-div a {
     background-color: #050505;
     border-radius: 15px;
     user-select: none;
+    -webkit-user-drag: none;
     transition: all 0.5s;
 }
 
@@ -212,6 +213,7 @@ header.style-3 .main-container .link-container .a-copy-div a {
     box-shadow: inset 0 0 5px #0f0;
     text-shadow: 0 0 5px #0f0;
     user-select: none;
+    -webkit-user-drag: none;
     transition: all 0.5s;
 }
 
