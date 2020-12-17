@@ -55,20 +55,32 @@
                 keys: []
             }
 
-            const update = (deltaTime) => {
-                deltaTime *= 0.001;
+            let paused = false;
 
-                for (const cube of cubes) {
-                    cube.rotation.x = deltaTime * 0.5;
-                    cube.rotation.y = deltaTime * 0.5;
+            let formerTime = 0;
+            let elapsedTime = 0;
+            let deltaTime = 0;
+            const update = () => {
+                elapsedTime = Math.abs(formerTime - performance.now());
+                deltaTime = elapsedTime / 1000;
+                
+                if (!paused) {
+                    console.log
+
+                    for (const cube of cubes) {
+                        cube.rotation.x += 0.5 * deltaTime;
+                        cube.rotation.y += 0.5 * deltaTime;
+                    }
+
+                    if (keyboard.keys[65]) camera.rotation.y += 1 * deltaTime;
+                    if (keyboard.keys[68]) camera.rotation.y -= 1 * deltaTime;
+                    if (keyboard.keys[87]) camera.rotation.x += 1 * deltaTime;
+                    if (keyboard.keys[83]) camera.rotation.x -= 1 * deltaTime;
                 }
 
-                if (keyboard.keys[65]) camera.rotation.y += 0.025;
-                if (keyboard.keys[68]) camera.rotation.y -= 0.025;
-                if (keyboard.keys[87]) camera.rotation.x += 0.025;
-                if (keyboard.keys[83]) camera.rotation.x -= 0.025;
-                
                 renderer.render(scene, camera);
+
+                formerTime = performance.now();
 
                 requestAnimationFrame(update);
             }
@@ -81,6 +93,7 @@
             window.addEventListener("resize", onWindowResize);
 
             window.addEventListener("keydown", e => {
+                if (e.keyCode === 13) paused = !paused;
                 keyboard.keys[e.keyCode] = true;
             });
             window.addEventListener("keyup", e => {
