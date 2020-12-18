@@ -82,10 +82,17 @@
                         cube.rotation.y += 0.5 * deltaTime;
                     }
 
+                    // look
                     if (keyboard.keys[65]) camera.rotation.y += 1 * deltaTime;
                     if (keyboard.keys[68]) camera.rotation.y -= 1 * deltaTime;
                     if (keyboard.keys[87]) camera.rotation.x += 1 * deltaTime;
                     if (keyboard.keys[83]) camera.rotation.x -= 1 * deltaTime;
+
+                    // move
+                    if (keyboard.keys[37]) camera.position.x -= 1 * deltaTime;
+                    if (keyboard.keys[39]) camera.position.x += 1 * deltaTime;
+                    if (keyboard.keys[38]) camera.position.z -= 1 * deltaTime;
+                    if (keyboard.keys[40]) camera.position.z += 1 * deltaTime;
                 }
 
                 renderer.render(scene, camera);
