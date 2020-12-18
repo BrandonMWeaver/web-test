@@ -147,24 +147,22 @@
                 linkContainer.className = "link-container";
                 linkContainer.style.width = `${100 / links.length}%`;
 
-                const aDiv = document.createElement("div");
-                aDiv.className = "a-div";
+                const aBottom = document.createElement("div");
+                aBottom.className = "bottom";
+                const p = document.createElement("p");
+                p.innerHTML = link.text.toUpperCase();
+                aBottom.append(p);
+
+                const aTop = document.createElement("div");
+                aTop.className = "top";
                 const a = document.createElement("a");
                 a.innerHTML = link.text.toUpperCase();
                 a.href = link.href;
                 a.target = "_blank";
-                aDiv.append(a);
+                aTop.append(a);
 
-                const aCopyDiv = document.createElement("div");
-                aCopyDiv.className = "a-copy-div";
-                const aCopy = document.createElement("a");
-                aCopy.innerHTML = link.text.toUpperCase();
-                aCopy.href = link.href;
-                aCopy.target = "_blank";
-                aCopyDiv.append(aCopy);
-
-                linkContainer.append(aDiv);
-                linkContainer.append(aCopyDiv);
+                linkContainer.append(aBottom);
+                linkContainer.append(aTop);
                 mainContainer.append(linkContainer);
             }
 
